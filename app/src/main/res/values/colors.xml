@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0b2938</color>
+    <color name="colorPrimaryDark">#2b1a09</color>
+    <color name="colorAccent">#E0F5FC</color>
+
+    <color name="LightYellow">#F1C40F</color>
+    <color name="DarkWhite">#D7DBDD</color>
+
+    <color name="duskYellow">#F1C40F</color>
+    <color name="lightGrey">#232425</color>
+    <color name="darkGrey">#D11818</color>
+
+    <color name="popup">#FFFFFF</color>
+
+    <color name="tran">#9FFFFFFF</color>
+
+
+</resources>
