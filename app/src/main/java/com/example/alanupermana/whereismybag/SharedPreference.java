@@ -57,5 +57,5 @@ public class SharedPreference {
         editor.remove(PREFS_KEY);
         editor.commit();
     }
-}
+
 }

@@ -8,6 +8,8 @@ import android.view.Window;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_TEXT = "com.example.application.example.EXTRA_TEXT";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

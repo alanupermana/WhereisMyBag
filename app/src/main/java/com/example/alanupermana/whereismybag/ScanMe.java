@@ -23,6 +23,8 @@ import com.google.android.gms.vision.barcode.Barcode;
 
 import java.io.IOException;
 
+import static com.example.alanupermana.whereismybag.MainActivity.EXTRA_TEXT;
+
 public class ScanMe extends AppCompatActivity {
 
     SurfaceView cameraPreview;
@@ -31,34 +33,40 @@ public class ScanMe extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     ImageView scanme;
 
+    String textID = "wimb000001";
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanme);
 
-        scanme = findViewById(R.id.scanmeToscan);
-        scanme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(ScanMe.this,ShowLocation.class);
-                startActivity(i);
-            }
-        });
-
         cameraPreview = findViewById(R.id.cameraPreview);
         textIdScanme = findViewById(R.id.textIdScanme);
 
 
-        barcodeDetector = new BarcodeDetector.Builder(this)
-                .setBarcodeFormats(Barcode.QR_CODE).build();
 
+        scanme = findViewById(R.id.scanmeToscan);
+        scanme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openShowLocation();
+            }
+        });
 
-        cameraSource = new CameraSource.Builder(this, barcodeDetector)
-                .setRequestedPreviewSize(750, 750).build();
+        //BARCODE DETECTOR
+        barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
 
+        //SIZE CAMERA
+        cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(750, 750).build();
+
+        //AKSES CAMERA
         cameraPreview.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
+                //PERMISSION CAMERA
                 if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
@@ -67,26 +75,18 @@ public class ScanMe extends AppCompatActivity {
                 }catch (IOException e){
                     e.printStackTrace();
                 }
-
             }
+            @Override
+            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) { }
 
             @Override
-            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
-            }
-
-            @Override
-            public void surfaceDestroyed(SurfaceHolder holder) {
-                cameraSource.stop();
-
-            }
+            public void surfaceDestroyed(SurfaceHolder holder) { cameraSource.stop(); }
         });
 
+        // SET DETECTOR
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
-            public void release() {
-
-            }
+            public void release() { }
 
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
@@ -97,17 +97,19 @@ public class ScanMe extends AppCompatActivity {
                         public void run() {
                             Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(10);
-                            textIdScanme.setText(qrCodes.valueAt(0).displayValue);
-                        }
+                            textIdScanme.setText(qrCodes.valueAt(0).displayValue); }
                     });
-                    SharedPreferences mSettings = getActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
-
-
+                    //SharedPreferences mSettings = getActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
                 }
             }
         });
-
-
+    }
+    public void openShowLocation() {
+        String text = textIdScanme.getText().toString();
+        Intent intent = new Intent(this, ShowLocation.class);
+        intent.putExtra(EXTRA_TEXT, text);
+        startActivity(intent);
 
     }
 }
+

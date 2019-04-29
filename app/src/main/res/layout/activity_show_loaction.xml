@@ -113,42 +113,106 @@
         app:layout_constraintVertical_bias="0.001"
         app:srcCompat="@drawable/scanmetexthdpi" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="50dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginBottom="240dp"
-
-            >
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/listView">
-            </ListView>
-
-        </LinearLayout>
-
-
-    <ImageView
-        android:id="@+id/frameShowLoaction"
-        android:layout_width="310dp"
-        android:layout_height="314dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/frameShowLocation"
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:background="@drawable/frameview"
+        android:orientation="vertical"
+        android:padding="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403"
-        app:srcCompat="@drawable/frameview" />
+        app:layout_constraintVertical_bias="0.499">
+
+        <!--ID TICKET-->
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID Ticket     :   " />
+
+        <TextView
+            android:id="@+id/tvIdisi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvId"
+            android:text="wimb01" />
+
+        <!--DATE-->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvId"
+            android:text="Date             :   " />
+
+        <TextView
+            android:id="@+id/tvDateIsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvIdisi"
+            android:layout_toRightOf="@+id/tvDate"
+            android:text="Senin" />
+
+        <!--LOCATION-->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDate"
+            android:text="Location History" />
+
+        <!--GATEIN-->
+        <TextView
+            android:id="@+id/tvGatein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLocation"
+            android:text="Gate In        :   " />
+
+        <TextView
+            android:id="@+id/tvGateinIsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLocation"
+            android:layout_toRightOf="@+id/tvDate"
+            android:text="gate_10" />
+
+        <!--AIRCRAFT-->
+        <TextView
+            android:id="@+id/tvAircraft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGatein"
+            android:text="Aircraft       :   " />
+
+        <TextView
+            android:id="@+id/tvAircraftIsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGatein"
+            android:layout_toRightOf="@+id/tvAircraft"
+            android:text="garuda_ind" />
+
+        <!--GATEOUT-->
+        <TextView
+            android:id="@+id/tvGateout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAircraft"
+            android:text="Gate out     :   " />
+
+        <TextView
+            android:id="@+id/tvGateoutIsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAircraft"
+            android:layout_toRightOf="@+id/tvGateout"
+            android:text="gate_12" />
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/refresh"
