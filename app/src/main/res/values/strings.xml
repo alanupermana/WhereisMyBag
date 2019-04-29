@@ -1,39 +1,3 @@
 <resources>
     <string name="app_name">Where is My Bag</string>
-    <string name="logo">logo</string>
-    <string name="where_is_my_bag">Where is My Bag</string>
-    <string name="aditya_wi">Where is My Bag?</string>
-    <string name="btnaboutus">btnaboutus</string>
-    <string name="btnfeedback">btnfeedback</string>
-    <string name="btnhelp">btnhelp</string>
-    <string name="topnya">topnya</string>
-    <string name="botnya">botnya</string>
-    <string name="backairplane">backairplane</string>
-    <string name="backnya">backnya</string>
-    <string name="texnya">texnya</string>
-    <string name="btnscanme">btnscanme</string>
-    <string name="textscanme">textscanme</string>
-    <string name="scanmetoscan">scanmetoscan</string>
-    <string name="texthelp">texthelp</string>
-    <string name="home">home</string>
-    <string name="faq">faq</string>
-    <string name="textAboutus">textaboutus</string>
-    <string name="formaboutus">formaboutus</string>
-    <string name="textFeedback">textFeedback</string>
-    <string name="accept">accept</string>
-    <string name="cancel">cancel</string>
-    <string name="contacus">contacus</string>
-    <string name="inputFeedback">Input feedback ...</string>
-    <string name="text_where_is_my_bag">Text Where Is My Bag?</string>
-    <string name="scan_your_qr_code"> text id yang akan di olah</string>
-    <string name="frameview">frameview</string>
-    <string name="framescan">framescan</string>
-    <string name="frameShowLocation"></string>
-    <string name="refresh"></string>
-    <string name="textBarang"></string>
-    <string name="bgpop">bgpop</string>
-    <string name="id_pegawai">ID Pegawai</string>
-    <string name="salary">Salary</string>
-
-
 </resources>
