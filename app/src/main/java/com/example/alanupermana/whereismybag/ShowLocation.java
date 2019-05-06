@@ -3,6 +3,7 @@ package com.example.alanupermana.whereismybag;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -40,6 +41,7 @@ public class ShowLocation extends AppCompatActivity {
 
     FirebaseDatabase db;
     DatabaseReference dbRef;
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,36 +60,73 @@ public class ShowLocation extends AppCompatActivity {
         //listView = findViewById(R.id.listView);
         //getJSON();
 
-
         id = findViewById(R.id.tvIdisi);
         date = findViewById(R.id.tvDateIsi);
         gate_in = findViewById(R.id.tvGateinIsi);
         aircraft = findViewById(R.id.tvAircraftIsi);
         gate_out = findViewById(R.id.tvGateoutIsi);
 
-        //TEST
-        location = findViewById(R.id.tvLocation);
+        //AMBIL TEXT DARI CLASS SCANME
         Intent intent = getIntent();
-        String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
-        location.setText(text);
+        text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
+
+        final ProgressDialog showD = ProgressDialog.show(
+                ShowLocation.this,
+                "Mengambil Data",
+                "Mohon tunggu...",
+                false,true);
+
 
         db = FirebaseDatabase.getInstance();
-        dbRef = db.getReference().child("Ticket").child("wimb000001");
-        Log.e("ShowLocation", "onCreate: "+ dbRef.toString() );
+        dbRef = db.getReference().child("Ticket");
 
-        dbRef.addValueEventListener(new ValueEventListener() {
+        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.e("ShowLoc", "onDataChange: " + dataSnapshot.toString());
-                ModelTicket data = dataSnapshot.getValue(ModelTicket.class);
-                id.setText(dataSnapshot.getKey());
-                Date time = new Date(data.Date*1000);
-                SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");
-                Log.e("ShowDate", "onDataChange: "+ sdf.toString() );
-                date.setText(sdf.format(time));
-                gate_in.setText(data.Gate_in);
-                aircraft.setText(data.Aircraft);
-                gate_out.setText(data.Gate_out);
+                if (dataSnapshot.hasChild(text)){
+                    dbRef.child(text).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Log.e("ShowLoc", "onDataChange: " + dataSnapshot.toString());
+                            ModelTicket data = dataSnapshot.getValue(ModelTicket.class);
+                            showD.dismiss();
+                            id.setText(dataSnapshot.getKey());
+                            Date time = new Date((data.Date*1000));
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                            Log.e("ShowDate", "onDataChange: "+ sdf.toString() );
+                            date.setText(sdf.format(time));
+                            gate_in.setText(data.Gate_in);
+                            aircraft.setText(data.Aircraft);
+                            gate_out.setText(data.Gate_out);
+
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+
+
+
+
+                        }
+                    });
+
+                }else{
+                    showD.dismiss();
+                    ProgressDialog.show(
+                            ShowLocation.this,
+                            "Your id not valid",
+                            "Please try again!",
+                            false,true);
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(ShowLocation.this,ScanMe.class);
+                            startActivity(i);
+                        }
+                    }, 2000);
+                }
+
             }
 
             @Override
@@ -95,6 +134,9 @@ public class ShowLocation extends AppCompatActivity {
 
             }
         });
+
+        Log.e("ShowLocation", "onCreate: " + dbRef.toString() );
+
 
 
 

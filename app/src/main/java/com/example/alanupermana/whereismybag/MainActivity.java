@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Home.class));
                 finish();
             }
-        },delay); //3000 L = 3 detik
+        },3000); //3000 L = 3 detik
 
 
     }

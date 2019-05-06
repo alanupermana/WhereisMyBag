@@ -15,7 +15,7 @@ public class Help extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-        faq = findViewById(R.id.faq);
+        faq = findViewById(R.id.ivBtnF);
         faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,15 +7,17 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class AboutUs extends AppCompatActivity {
-    ImageView home;
+    /* Variabel ImageView digunakan untuk intent, menunjukan ke halaman tertentu */
+    ImageView ivBtnVarHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
 
-        home = findViewById(R.id.home);
-        home.setOnClickListener(new View.OnClickListener() {
+        /* Saat menu Home di klik, menuju class Home */
+        ivBtnVarHome = findViewById(R.id.ivBtnHome);
+        ivBtnVarHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(AboutUs.this,Home.class);

@@ -35,9 +35,6 @@ public class ScanMe extends AppCompatActivity {
 
     String textID = "wimb000001";
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +42,6 @@ public class ScanMe extends AppCompatActivity {
 
         cameraPreview = findViewById(R.id.cameraPreview);
         textIdScanme = findViewById(R.id.textIdScanme);
-
-
 
         scanme = findViewById(R.id.scanmeToscan);
         scanme.setOnClickListener(new View.OnClickListener() {
@@ -104,12 +99,12 @@ public class ScanMe extends AppCompatActivity {
             }
         });
     }
+
     public void openShowLocation() {
         String text = textIdScanme.getText().toString();
         Intent intent = new Intent(this, ShowLocation.class);
         intent.putExtra(EXTRA_TEXT, text);
         startActivity(intent);
-
     }
 }
 

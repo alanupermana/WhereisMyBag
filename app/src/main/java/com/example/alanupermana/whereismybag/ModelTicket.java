@@ -1,7 +1,6 @@
 package com.example.alanupermana.whereismybag;
 
 public class ModelTicket {
-
     public Long Date;
     public String Gate_in;
     public String Aircraft;
@@ -16,5 +15,7 @@ public class ModelTicket {
 
     public ModelTicket() {
     }
+
+
 }
 

@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Where is My Bag</string>
+    <string name="backnya" />
+    <string name="backairplane" />
+    <string name="botnya" />
+    <string name="topnya" />
+    <string name="texthelp" />
+    <string name="home" />
+    <string name="faq" />
+    <string name="contacus" />
+    <string name="textFeedback" />
+    <string name="accept" />
+    <string name="cancel" />
+    <string name="frameview" />
+    <string name="inputFeedback" />
+    <string name="textBarang" />
+    <string name="bgpop" />
+    <string name="textAboutus" />
+    <string name="formaboutus" />
+    <string name="scan_your_qr_code" />
+    <string name="scanmetoscan" />
+    <string name="framescan" />
+    <string name="textscanme" />
+    <string name="refresh" />
 </resources>
