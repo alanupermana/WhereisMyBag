@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    tools:context=".Faq">
+
+    <!--BG-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/backairplanehdpi" />
+
+    <!--TOP-->
+    <RelativeLayout
+        android:id="@+id/rlTOP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-4dp"
+            app:srcCompat="@drawable/tophdpi" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/faq_1hdpi" />
+    </RelativeLayout>
+
+    <!--MIDDLE-->
+    <RelativeLayout
+        android:id="@+id/rlMIDDLE"
+        android:layout_width="300dp"
+        android:layout_height="475dp"
+        android:gravity="center"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_below="@id/rlTOP">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="10dp"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <!--NAME & ID-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:paddingStart="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center|left"
+                    >
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/locationPICT"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alanu dinasti Permana"
+                            android:textSize="15sp"
+                            android:textColor="@android:color/white"
+                            android:layout_marginStart="10dp"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ID : "
+                                android:textSize="10sp"
+                                android:textColor="@android:color/white"
+                                android:layout_marginStart="10dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="A1234"
+                                android:textSize="10sp"
+                                android:textColor="@android:color/white"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+                <!--END NAME & ID-->
+
+                <!--DATA-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_border"
+                    >
+                    <!--KONTENT-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical"
+                        >
+
+                        <!--CLASS-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Class : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Business"
+                                />
+                        </LinearLayout>
+                        <!--END CLASS-->
+
+                        <!--DATE-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10/04/2019"
+                                />
+                        </LinearLayout>
+                        <!--END DATE-->
+
+                        <!--BOARDING TIME-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Boarding Time : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="07:45"
+                                />
+                        </LinearLayout>
+                        <!--END BOARDING TIME-->
+
+                        <!--LINE 1-->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            />
+                        <!--END LINE 1-->
+
+
+                        <!--FROM-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="From : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Indonesia"
+                                />
+                        </LinearLayout>
+                        <!--END FROM-->
+
+                        <!--TO-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="To : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="England"
+                                />
+                        </LinearLayout>
+                        <!--END TO-->
+
+                        <!--LINE 2-->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            />
+                        <!--END LINE 2-->
+
+                        <!--GATE-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gate : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="H22"
+                                />
+                        </LinearLayout>
+                        <!--END GATE-->
+
+                        <!--DATE-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date : "
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="10/04/2019"
+                                />
+                        </LinearLayout>
+                        <!--END DATE-->
+
+                        <!--LINE 1-->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            />
+                        <!--END LINE 1-->
+
+                        <!--LOCATION-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Location : "
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GATE BAG 01"
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                />
+
+                        </LinearLayout>
+                        <!--END LOCATION-->
+
+
+
+                    </LinearLayout>
+                    <!--END KONTENT-->
+                </LinearLayout>
+                <!--END DATA-->
+
+            </LinearLayout>
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@drawable/framevieww" />-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_margin="50dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Mantoap"/>-->
+
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+
+    <!--BOTTOM-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlMIDDLE"
+        android:layout_alignParentBottom="true"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-4dp"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/bottomhdpi" />
+        <ImageView
+            android:id="@+id/ivBtnHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/homehdpi" />
+    </RelativeLayout>
+</RelativeLayout>

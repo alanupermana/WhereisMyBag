@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:gravity="center"
-    android:orientation="vertical"
     tools:context=".Faq">
 
     <!--BG-->
@@ -46,20 +45,37 @@
         android:layout_below="@id/rlTOP"
         android:layout_marginLeft="55dp"
         android:layout_marginRight="50dp">
-        <ImageView
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/framevieww" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="50dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Mantoap"/>
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            app:cardCornerRadius="10dp"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
 
-        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@drawable/framevieww" />-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_margin="50dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Mantoap"/>-->
+
+        <!--</LinearLayout>-->
     </RelativeLayout>
 
     <!--BOTTOM-->

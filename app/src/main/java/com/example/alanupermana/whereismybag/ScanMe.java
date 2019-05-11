@@ -33,8 +33,6 @@ public class ScanMe extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     ImageView scanme;
 
-    String textID = "wimb000001";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +92,19 @@ public class ScanMe extends AppCompatActivity {
                             vibrator.vibrate(10);
                             textIdScanme.setText(qrCodes.valueAt(0).displayValue); }
                     });
-                    //SharedPreferences mSettings = getActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE);
+
+//                    Handler handler = new Handler();
+//                    handler.postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            String text = textIdScanme.getText().toString();
+//                            Intent i = new Intent(ShowLocation.this,ScanMe.class);
+//                            i.putExtra(EXTRA_TEXT, text);
+//                            startActivity(i);
+//                        }
+//                    }, 2000);
+
+
                 }
             }
         });

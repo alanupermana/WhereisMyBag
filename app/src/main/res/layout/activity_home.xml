@@ -20,12 +20,13 @@
         android:id="@+id/rlTOP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="60dp"
+        android:paddingBottom="50dp"
+        android:layout_alignParentTop="true"
         >
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-4dp"
+            android:layout_marginTop="-10dp"
             app:srcCompat="@drawable/tophdpi" />
         <ImageView
             android:layout_width="600dp"
@@ -87,7 +88,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="-4dp"
+            android:layout_marginBottom="-10dp"
             android:layout_alignParentBottom="true"
             app:srcCompat="@drawable/bottomhdpi" />
         <ImageView
